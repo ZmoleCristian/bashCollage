@@ -74,8 +74,8 @@ else
 fi
 
 echo "Creating a collage with $num_images images in $num_rows rows"
-
-montage @imglist -resize "$choice"% -tile "$grid"x"$num_rows" "$output_dir$output_image"
+#use montage on the list of images to create the collage that uses geometry to resize the images and tile to arrange them in a grid
+montage @imglist -geometry "$choice%" -tile "$grid"x"$num_rows" "$output_dir$output_image"
 echo "Removing temporary files"
 rm tmplist imglist 
 echo "Collage created and saved to $output_dir$output_image"
